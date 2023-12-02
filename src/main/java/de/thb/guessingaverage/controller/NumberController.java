@@ -1,4 +1,4 @@
-package de.thb.groupChat.controller;
+package de.thb.guessingaverage.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

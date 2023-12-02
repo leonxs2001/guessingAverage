@@ -1,7 +1,7 @@
-package de.thb.groupChat;
+package de.thb.guessingaverage;
 
-import de.thb.groupChat.entities.NumberEntry;
-import de.thb.groupChat.service.NumberEntryCalculationService;
+import de.thb.guessingaverage.entities.NumberEntry;
+import de.thb.guessingaverage.service.NumberEntryCalculationService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

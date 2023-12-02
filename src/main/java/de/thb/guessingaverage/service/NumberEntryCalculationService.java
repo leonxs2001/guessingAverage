@@ -1,6 +1,6 @@
-package de.thb.groupChat.service;
+package de.thb.guessingaverage.service;
 
-import de.thb.groupChat.entities.NumberEntry;
+import de.thb.guessingaverage.entities.NumberEntry;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

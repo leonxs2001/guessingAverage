@@ -1,4 +1,4 @@
-package de.thb.groupChat.entities;
+package de.thb.guessingaverage.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
