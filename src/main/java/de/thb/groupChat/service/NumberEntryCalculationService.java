@@ -10,4 +10,10 @@ public class NumberEntryCalculationService {
     public float calculateAverage(List<NumberEntry> numberEntryList){
         return 0;
     }
+
+    public float calculateMedian(List<NumberEntry> numberEntryList){return 0;}
+
+    public float getMaxNumber(List<NumberEntry> numberEntryList){return 0;}
+
+    public float getMinNumber(List<NumberEntry> numberEntryList){return 0;}
 }
