@@ -9,34 +9,34 @@ import java.util.List;
 
 @Service
 public class NumberEntryCalculationService {
-    public float calculateAverageNumber(List<NumberEntry> numberEntryList){
+    public float calculateAverageNumber(List<NumberEntry> numberEntryList) {
         return 0;
     }
 
-    public float calculateMedianNumber(List<NumberEntry> numberEntryList){
-        if(numberEntryList == null || numberEntryList.isEmpty()) {
+    public float calculateMedianNumber(List<NumberEntry> numberEntryList) {
+        if (numberEntryList == null || numberEntryList.isEmpty()) {
             return 0;
         }
 
         List<NumberEntry> copiedNumberEntries = new ArrayList<>(numberEntryList);
         Collections.sort(copiedNumberEntries);
 
-        if(copiedNumberEntries.size() % 2 == 0){
+        if (copiedNumberEntries.size() % 2 == 0) {
             int rightMiddleIndex = copiedNumberEntries.size() / 2;
 
             NumberEntry rightMiddleNumberEntry = copiedNumberEntries.get(rightMiddleIndex);
             NumberEntry leftMiddleNumberEntry = copiedNumberEntries.get(rightMiddleIndex - 1);
 
-            float middleNumberEntryAverage = (rightMiddleNumberEntry.getNumber() + leftMiddleNumberEntry.getNumber()) / 2.0f;
-            return middleNumberEntryAverage;
-        }else{
+            // calculate the average of the middle numbers
+            return (rightMiddleNumberEntry.getNumber() + leftMiddleNumberEntry.getNumber()) / 2.0f;
+        } else {
             NumberEntry middleNumberEntry = copiedNumberEntries.get(copiedNumberEntries.size() / 2);
             return middleNumberEntry.getNumber();
         }
     }
 
-    public float getMaxNumber(List<NumberEntry> numberEntryList){
-        if(numberEntryList == null || numberEntryList.isEmpty()) {
+    public float getMaxNumber(List<NumberEntry> numberEntryList) {
+        if (numberEntryList == null || numberEntryList.isEmpty()) {
             return 0;
         }
 
@@ -44,8 +44,8 @@ public class NumberEntryCalculationService {
         return maxNumberEntry.getNumber();
     }
 
-    public float getMinNumber(List<NumberEntry> numberEntryList){
-        if(numberEntryList == null || numberEntryList.isEmpty()) {
+    public float getMinNumber(List<NumberEntry> numberEntryList) {
+        if (numberEntryList == null || numberEntryList.isEmpty()) {
             return 0;
         }
 

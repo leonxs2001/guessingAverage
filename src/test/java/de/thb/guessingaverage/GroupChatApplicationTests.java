@@ -33,7 +33,7 @@ class NumberEntryCalculationServiceTests {
     }
 
     @Test
-    public void test_average_calculation_with_null() {
+    void test_average_calculation_with_null() {
         Assertions.assertEquals(0, numberEntryCalculationService.calculateAverageNumber(null), "Given average should be 0 in case of null as given entries.");
     }
 
@@ -59,13 +59,13 @@ class NumberEntryCalculationServiceTests {
     }
 
     @Test
-    public void test_median_calculation_with_no_entries() {
+    void test_median_calculation_with_no_entries() {
         List<NumberEntry> numberEntries = new ArrayList<>();
         Assertions.assertEquals(0, numberEntryCalculationService.calculateMedianNumber(numberEntries), "Given median should be 0 in case of no given entries.");
     }
 
     @Test
-    public void test_median_calculation_with_null() {
+    void test_median_calculation_with_null() {
         Assertions.assertEquals(0, numberEntryCalculationService.calculateMedianNumber(null), "Given median should be 0 in case of null as given entries.");
     }
 
