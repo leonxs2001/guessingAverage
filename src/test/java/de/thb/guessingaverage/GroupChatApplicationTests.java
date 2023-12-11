@@ -27,7 +27,7 @@ class NumberEntryCalculationServiceTests {
     }
 
     @Test
-    public void test_average_calculation_without_entries() {
+    void test_average_calculation_without_entries() {
         List<NumberEntry> numberEntries = new ArrayList<>();
         Assertions.assertEquals(0, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average should be 0 in case of no given entries.");
     }
