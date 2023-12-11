@@ -23,18 +23,18 @@ class NumberEntryCalculationServiceTests {
         numberEntries.add(new NumberEntry(null, 3));
         numberEntries.add(new NumberEntry(null, 10));
 
-        Assertions.assertEquals(numberEntryCalculationService.calculateAverage(numberEntries), 7, "Given average is not the real average.");
+        Assertions.assertEquals(7, numberEntryCalculationService.calculateAverage(numberEntries), "Given average is not the real average.");
     }
 
     @Test
     public void test_average_calculation_without_entries() {
         List<NumberEntry> numberEntries = new ArrayList<>();
-        Assertions.assertEquals(numberEntryCalculationService.calculateAverage(numberEntries), 0, "Given average should be 0 in case of no given entries.");
+        Assertions.assertEquals(0, numberEntryCalculationService.calculateAverage(numberEntries), "Given average should be 0 in case of no given entries.");
     }
 
     @Test
     public void test_average_calculation_with_null() {
-        Assertions.assertEquals(numberEntryCalculationService.calculateAverage(null), 0, "Given average should be 0 in case of null as given entries.");
+        Assertions.assertEquals(0, numberEntryCalculationService.calculateAverage(null), "Given average should be 0 in case of null as given entries.");
     }
 
     @Test
@@ -44,7 +44,7 @@ class NumberEntryCalculationServiceTests {
         numberEntries.add(new NumberEntry(null, 3));
         numberEntries.add(new NumberEntry(null, 10));
 
-        Assertions.assertEquals(numberEntryCalculationService.calculateMedian(numberEntries), 3, "Given median is not the real median for an odd number of entries.");
+        Assertions.assertEquals(3, numberEntryCalculationService.calculateMedian(numberEntries), "Given median is not the real median for an odd number of entries.");
     }
 
     @Test
