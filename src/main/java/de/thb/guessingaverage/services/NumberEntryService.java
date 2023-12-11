@@ -23,7 +23,7 @@ public class NumberEntryService {
     }
 
     public float getTotalMinNumber(){
-        return numberEntryCalculationService.getMaxNumber(numberEntryRepository.findAll());
+        return numberEntryCalculationService.getMinNumber(numberEntryRepository.findAll());
     }
 
 }
