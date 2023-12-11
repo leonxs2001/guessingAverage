@@ -1,4 +1,4 @@
-package de.thb.guessingaverage.service;
+package de.thb.guessingaverage.services;
 
 import de.thb.guessingaverage.entities.NumberEntry;
 import org.springframework.stereotype.Service;
@@ -9,11 +9,11 @@ import java.util.List;
 
 @Service
 public class NumberEntryCalculationService {
-    public float calculateAverage(List<NumberEntry> numberEntryList){
+    public float calculateAverageNumber(List<NumberEntry> numberEntryList){
         return 0;
     }
 
-    public float calculateMedian(List<NumberEntry> numberEntryList){
+    public float calculateMedianNumber(List<NumberEntry> numberEntryList){
         if(numberEntryList == null || numberEntryList.size() == 0) {
             return 0;
         }

@@ -1,7 +1,7 @@
 package de.thb.guessingaverage;
 
 import de.thb.guessingaverage.entities.NumberEntry;
-import de.thb.guessingaverage.service.NumberEntryCalculationService;
+import de.thb.guessingaverage.services.NumberEntryCalculationService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,18 +23,18 @@ class NumberEntryCalculationServiceTests {
         numberEntries.add(new NumberEntry(null, 3));
         numberEntries.add(new NumberEntry(null, 10));
 
-        Assertions.assertEquals(7, numberEntryCalculationService.calculateAverage(numberEntries), "Given average is not the real average.");
+        Assertions.assertEquals(7, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average is not the real average.");
     }
 
     @Test
     public void test_average_calculation_without_entries() {
         List<NumberEntry> numberEntries = new ArrayList<>();
-        Assertions.assertEquals(0, numberEntryCalculationService.calculateAverage(numberEntries), "Given average should be 0 in case of no given entries.");
+        Assertions.assertEquals(0, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average should be 0 in case of no given entries.");
     }
 
     @Test
     public void test_average_calculation_with_null() {
-        Assertions.assertEquals(0, numberEntryCalculationService.calculateAverage(null), "Given average should be 0 in case of null as given entries.");
+        Assertions.assertEquals(0, numberEntryCalculationService.calculateAverageNumber(null), "Given average should be 0 in case of null as given entries.");
     }
 
     @Test
@@ -44,7 +44,7 @@ class NumberEntryCalculationServiceTests {
         numberEntries.add(new NumberEntry(null, 3));
         numberEntries.add(new NumberEntry(null, 10));
 
-        Assertions.assertEquals(3, numberEntryCalculationService.calculateMedian(numberEntries), "Given median is not the real median for an odd number of entries.");
+        Assertions.assertEquals(3, numberEntryCalculationService.calculateMedianNumber(numberEntries), "Given median is not the real median for an odd number of entries.");
     }
 
     @Test
@@ -55,18 +55,18 @@ class NumberEntryCalculationServiceTests {
         numberEntries.add(new NumberEntry(null, 4));
         numberEntries.add(new NumberEntry(null, 10));
 
-        Assertions.assertEquals(3.5, numberEntryCalculationService.calculateMedian(numberEntries), "Given median is not the real median for an even number of entries. Should be the average of the 2 middle numbers.");
+        Assertions.assertEquals(3.5, numberEntryCalculationService.calculateMedianNumber(numberEntries), "Given median is not the real median for an even number of entries. Should be the average of the 2 middle numbers.");
     }
 
     @Test
     public void test_median_calculation_with_no_entries() {
         List<NumberEntry> numberEntries = new ArrayList<>();
-        Assertions.assertEquals(0, numberEntryCalculationService.calculateMedian(numberEntries), "Given median should be 0 in case of no given entries.");
+        Assertions.assertEquals(0, numberEntryCalculationService.calculateMedianNumber(numberEntries), "Given median should be 0 in case of no given entries.");
     }
 
     @Test
     public void test_median_calculation_with_null() {
-        Assertions.assertEquals(0, numberEntryCalculationService.calculateMedian(null), "Given median should be 0 in case of null as given entries.");
+        Assertions.assertEquals(0, numberEntryCalculationService.calculateMedianNumber(null), "Given median should be 0 in case of null as given entries.");
     }
 
     @Test
