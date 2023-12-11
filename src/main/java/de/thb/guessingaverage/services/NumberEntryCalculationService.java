@@ -14,7 +14,7 @@ public class NumberEntryCalculationService {
     }
 
     public float calculateMedianNumber(List<NumberEntry> numberEntryList){
-        if(numberEntryList == null || numberEntryList.size() == 0) {
+        if(numberEntryList == null || numberEntryList.isEmpty()) {
             return 0;
         }
 
@@ -36,7 +36,7 @@ public class NumberEntryCalculationService {
     }
 
     public float getMaxNumber(List<NumberEntry> numberEntryList){
-        if(numberEntryList == null || numberEntryList.size() == 0) {
+        if(numberEntryList == null || numberEntryList.isEmpty()) {
             return 0;
         }
 
@@ -45,7 +45,7 @@ public class NumberEntryCalculationService {
     }
 
     public float getMinNumber(List<NumberEntry> numberEntryList){
-        if(numberEntryList == null || numberEntryList.size() == 0) {
+        if(numberEntryList == null || numberEntryList.isEmpty()) {
             return 0;
         }
 
