@@ -10,9 +10,16 @@ import java.util.List;
 @Service
 public class NumberEntryCalculationService {
 
-//    TODO: Implement average calculation
     public float calculateAverageNumber(List<NumberEntry> numberEntryList) {
-        return 0;
+        if (numberEntryList == null || numberEntryList.isEmpty()) {
+            return 0;
+        }
+
+        int sum = 0;
+        for (NumberEntry entry : numberEntryList) {
+            sum += entry.getNumber();
+        }
+        return (float) sum / numberEntryList.size();
     }
 
     public float calculateMedianNumber(List<NumberEntry> numberEntryList) {
