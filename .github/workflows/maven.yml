@@ -31,7 +31,7 @@ jobs:
     #- name: Ausgabe des Verzeichnisses
     #  run: pwd
     - name: Upload JAR
-      uses: actions/uploadartifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: my-jar
         path: jarfile.jar
