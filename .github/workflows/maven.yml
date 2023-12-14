@@ -27,7 +27,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean package -DoutputDirectory="/"
+      run: mvn clean package
+    - name: Ausgabe des Verzeichnisses
+      run: ls -la
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
