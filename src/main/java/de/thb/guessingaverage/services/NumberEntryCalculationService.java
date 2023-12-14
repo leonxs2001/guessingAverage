@@ -15,11 +15,11 @@ public class NumberEntryCalculationService {
             return 0;
         }
 
-        int sum = 0;
+        float sum = 0;
         for (NumberEntry entry : numberEntryList) {
             sum += entry.getNumber();
         }
-        return (float) sum / numberEntryList.size();
+        return sum / numberEntryList.size();
     }
 
     public float calculateMedianNumber(List<NumberEntry> numberEntryList) {

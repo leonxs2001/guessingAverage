@@ -26,13 +26,46 @@ class NumberEntryCalculationServiceTests {
     private NumberEntryCalculationService numberEntryCalculationService;
 
     @Test
-    void test_average_calculation_with_entries() {
+    void test_average_calculation_with_entries_positive() {
         List<NumberEntry> numberEntries = new ArrayList<>();
-        numberEntries.add(new NumberEntry(null, 1));
-        numberEntries.add(new NumberEntry(null, 3));
-        numberEntries.add(new NumberEntry(null, 10));
+        numberEntries.add(new NumberEntry(null, 0.3f));
+        numberEntries.add(new NumberEntry(null, 0.5f));
+        numberEntries.add(new NumberEntry(null, 0.4f));
 
-        Assertions.assertEquals(7, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average is not the real average.");
+        Assertions.assertEquals(0.4f, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average is not the real average.");
+    }
+
+    @Test
+    void test_average_calculation_with_entries_big() {
+        List<NumberEntry> numberEntries = new ArrayList<>();
+        numberEntries.add(new NumberEntry(null, 120));
+        numberEntries.add(new NumberEntry(null, 120));
+        numberEntries.add(new NumberEntry(null, 121));
+        numberEntries.add(new NumberEntry(null, 121));
+
+        Assertions.assertEquals(120.5f, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average is not the real average.");
+    }
+
+    @Test
+    void test_average_calculation_with_entries_mixed() {
+        List<NumberEntry> numberEntries = new ArrayList<>();
+        numberEntries.add(new NumberEntry(null, -4.5f));
+        numberEntries.add(new NumberEntry(null, 0));
+        numberEntries.add(new NumberEntry(null, 10));
+        numberEntries.add(new NumberEntry(null, -100));
+
+        Assertions.assertEquals(-23.625f, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average is not the real average.");
+    }
+
+    @Test
+    void test_average_calculation_with_entries_zeros() {
+        List<NumberEntry> numberEntries = new ArrayList<>();
+        numberEntries.add(new NumberEntry(null, 0));
+        numberEntries.add(new NumberEntry(null, 0));
+        numberEntries.add(new NumberEntry(null, 0));
+        numberEntries.add(new NumberEntry(null, -0));
+
+        Assertions.assertEquals(0, numberEntryCalculationService.calculateAverageNumber(numberEntries), "Given average is not the real average.");
     }
 
     @Test
