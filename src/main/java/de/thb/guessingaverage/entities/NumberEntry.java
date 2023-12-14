@@ -21,15 +21,15 @@ public class NumberEntry implements Comparable<NumberEntry>{
 
     private LocalDateTime dateTime;
 
-    private int number;
+    private float number;
 
-    public NumberEntry(LocalDateTime dateTime, int number){
+    public NumberEntry(LocalDateTime dateTime, float number){
         setNumber(number);
         setDateTime(dateTime);
     }
 
     @Override
     public int compareTo(NumberEntry numberEntry) {
-        return Integer.compare(number, numberEntry.getNumber());
+        return Float.compare(number, numberEntry.getNumber());
     }
 }

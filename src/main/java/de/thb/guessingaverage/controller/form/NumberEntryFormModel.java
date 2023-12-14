@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class NumberEntryFormModel {
-    private int number;
+    private float number;
 }

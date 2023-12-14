@@ -135,11 +135,13 @@ class NumberEntryServiceTests {
     @Test
     void test_add_number() {
         NumberEntryFormModel form = new NumberEntryFormModel();
-        form.setNumber(1);
+        float number = 1.f;
+        form.setNumber(number);
         numberEntryService.addNumber(form);
-        form.setNumber(2);
+        number = 2.5f;
+        form.setNumber(number);
         numberEntryService.addNumber(form);
-        Assertions.assertEquals(2, numberEntryRepository.findTopByOrderByIdDesc().getNumber(), "Number should be added to the database.");
+        Assertions.assertEquals(number, numberEntryRepository.findTopByOrderByIdDesc().getNumber(), "Number should be added to the database.");
     }
 
     @AfterEach
