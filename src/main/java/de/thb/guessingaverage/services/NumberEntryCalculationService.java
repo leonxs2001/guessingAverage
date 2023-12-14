@@ -9,6 +9,8 @@ import java.util.List;
 
 @Service
 public class NumberEntryCalculationService {
+
+//    TODO: Implement average calculation
     public float calculateAverageNumber(List<NumberEntry> numberEntryList) {
         return 0;
     }

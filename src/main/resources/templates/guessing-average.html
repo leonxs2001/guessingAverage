@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Guessing Average</title>
     <link rel="icon" th:href="@{/images/average.png}">
 </head>
 <body>
-<h1>Guessing Average</h1>
-<p>Du musst erraten, was der Durchschnitt aller bisher eingegebenen Zahlen ist! Jedes Mal, wenn du rätst, wird dein Tipp zum nächsten Durchschnitt dazugerechnet.</p>
-<p>Der bisher kleinste eingegebene Wert war <span th:text="${minNumber}"></span> und der größte <span th:text="${maxNumber}"></span>. Der Median aller bisherigen Werte ist <span th:text="${medianNumber}"></span>.</p>
-<p>Wie nah kommst du an den echten Durchschnitt?</p>
-<form>
-<input type="number" placeholder="Dein Tipp...">
-    <button type="submit">abschicken</button>
-</form>
+    <h1>Guessing Average</h1>
+    <p>Du musst erraten, was der Durchschnitt aller bisher eingegebenen Zahlen ist! Jedes Mal, wenn du rätst, wird dein Tipp zum nächsten Durchschnitt dazugerechnet.</p>
+    <p>Der bisher kleinste eingegebene Wert war <span th:text="${minNumber}"></span> und der größte <span th:text="${maxNumber}"></span>. Der Median aller bisherigen Werte ist <span th:text="${medianNumber}"></span>.</p>
+    <p>Wie nah kommst du an den echten Durchschnitt?</p>
+    <form action="" method="POST">
+        <input type="number" placeholder="Dein Tipp...">
+            <button type="submit">abschicken</button>
+    </form>
+    <p></p>
+    <div th:if="${averageNumber != null}">
+        <table>
+            <tr>
+                <th>Dein Tipp</th>
+                <th>Durchschnitt</th>
 
+            </tr>
+            <tr>
+                <td th:text="${number}"></td>
+                <td th:text="${averageNumber}"></td>
+            </tr>
+            <tr>
+                <td th:if="${number < averageNumber}" colspan="2">Dein Tipp ist zu klein!</td>
+                <td th:if="${number > averageNumber}" colspan="2">Dein Tipp ist zu groß!</td>
+                <td th:if="${number == averageNumber}" colspan="2">Dein Tipp ist richtig!</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

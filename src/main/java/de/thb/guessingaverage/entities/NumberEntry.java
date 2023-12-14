@@ -2,6 +2,7 @@ package de.thb.guessingaverage.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class NumberEntry implements Comparable<NumberEntry>{
     @Id
-    @Column(name = "id", nullable = false)
+//    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
 
     private LocalDateTime dateTime;
