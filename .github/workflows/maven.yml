@@ -31,10 +31,10 @@ jobs:
     #- name: Ausgabe des Verzeichnisses
     #  run: pwd
     - name: Upload JAR
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: my-jar
-        path: jarfile.jar
+        path: target/groupChat-0.0.1-SNAPSHOT.jar
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
