@@ -27,9 +27,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean package -DoutputDirectory="/home/runner/work/guessingAverage/guessingAverage"
-    - name: Ausgabe des Verzeichnisses
-      run: pwd
+      run: mvn clean package #-DoutputDirectory="/home/runner/work/guessingAverage/guessingAverage"
+    #- name: Ausgabe des Verzeichnisses
+    #  run: pwd
+    - name: Upload JAR
+      uses: actions/uploadartifact@v2
+      with:
+        name: my-jar
+        path: jarfile.jar
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
