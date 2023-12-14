@@ -12,12 +12,13 @@
     <p>Wie nah kommst du an den echten Durchschnitt?</p>
     <form action="" method="POST">
         <label for="number">Dein Tipp:</label><br>
-        <input id= "number" name="number" type="number" step="0.1" placeholder="Dein Tipp...">
+        <input id= "number" name="number" type="number" step="0.1" placeholder="Dein Tipp..." required>
             <button type="submit">abschicken</button>
     </form>
     <p></p>
     <div th:if="${averageNumber != null}">
         <table>
+            <caption>Ergebnis</caption>
             <tr>
                 <th>Dein Tipp</th>
                 <th>Durchschnitt</th>
