@@ -11,7 +11,8 @@
     <p>Der bisher kleinste eingegebene Wert war <span th:text="${minNumber}"></span> und der größte <span th:text="${maxNumber}"></span>. Der Median aller bisherigen Werte ist <span th:text="${medianNumber}"></span>.</p>
     <p>Wie nah kommst du an den echten Durchschnitt?</p>
     <form action="" method="POST">
-        <input type="number" placeholder="Dein Tipp...">
+        <label for="number">Dein Tipp:</label><br>
+        <input id= "number" type="number" placeholder="Dein Tipp...">
             <button type="submit">abschicken</button>
     </form>
     <p></p>
