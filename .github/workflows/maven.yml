@@ -33,7 +33,7 @@ jobs:
     - name: Upload JAR
       uses: actions/upload-artifact@v4
       with:
-        name: my-jar
+        name: guessingAverage
         path: target/groupChat-0.0.1-SNAPSHOT.jar
 
 
