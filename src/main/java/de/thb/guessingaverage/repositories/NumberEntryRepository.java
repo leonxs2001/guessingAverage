@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface NumberEntryRepository extends CrudRepository<NumberEntry, Long> {
     List<NumberEntry> findAll();
+
+    NumberEntry findTopByOrderByIdDesc();
 }

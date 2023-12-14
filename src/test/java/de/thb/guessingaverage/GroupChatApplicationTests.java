@@ -1,7 +1,12 @@
 package de.thb.guessingaverage;
 
-import de.thb.guessingaverage.entities.NumberEntry;
+import de.thb.guessingaverage.controller.form.NumberEntryFormModel;
 import de.thb.guessingaverage.services.NumberEntryCalculationService;
+import de.thb.guessingaverage.services.NumberEntryService;
+import de.thb.guessingaverage.repositories.NumberEntryRepository;
+import de.thb.guessingaverage.entities.NumberEntry;
+
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +14,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
+
+
 
 @SpringBootTest
 class NumberEntryCalculationServiceTests {
@@ -112,5 +121,30 @@ class NumberEntryCalculationServiceTests {
     void test_min_number_with_null() {
         Assertions.assertEquals(0, numberEntryCalculationService.getMinNumber(null), "Given min value should be 0 in case of null as given entries.");
     }
+}
 
+@SpringBootTest
+class NumberEntryServiceTests {
+
+    @Autowired
+    private NumberEntryService numberEntryService;
+
+    @Autowired
+    private NumberEntryRepository numberEntryRepository;
+
+    @Test
+    void test_add_number() {
+        NumberEntryFormModel form = new NumberEntryFormModel();
+        form.setNumber(1);
+        numberEntryService.addNumber(form);
+        form.setNumber(2);
+        numberEntryService.addNumber(form);
+        Assertions.assertEquals(2, numberEntryRepository.findTopByOrderByIdDesc().getNumber(), "Number should be added to the database.");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        numberEntryRepository.delete(numberEntryRepository.findTopByOrderByIdDesc());
+        numberEntryRepository.delete(numberEntryRepository.findTopByOrderByIdDesc());
+    }
 }
