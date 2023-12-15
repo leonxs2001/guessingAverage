@@ -224,8 +224,4 @@ class NumberEntryControllerTests {
         Assertions.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode(), "The web page should not be available.");
     }
 
-    @Test
-    public void this_test_should_fail() {
-        Assertions.assertEquals(1, 2, "This test should fail.");
-    }
 }
