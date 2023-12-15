@@ -19,9 +19,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     - name: Set up JDK 17
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
@@ -31,7 +31,7 @@ jobs:
     #- name: Ausgabe des Verzeichnisses
     #  run: pwd
     - name: Checkout repository
-      uses: actions/checkout@4
+      uses: actions/checkout@3
 
     - name: List and delete old artifacts
       run: |
