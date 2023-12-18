@@ -195,19 +195,19 @@ class NumberEntryControllerTests {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void test_is_there_a_webpage() {
+    void test_is_there_a_webpage() {
         ResponseEntity<String> response = restTemplate.getForEntity("/", String.class);
         Assertions.assertEquals(HttpStatus.OK, response.getStatusCode(), "The web page should be available.");
     }
 
     @Test
-    public void test_is_there_a_webpage_with_wrong_path() {
+    void test_is_there_a_webpage_with_wrong_path() {
         ResponseEntity<String> response = restTemplate.getForEntity("/this_is_a_wrong_path", String.class);
         Assertions.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode(), "The web page should not be available.");
     }
 
     @Test
-    public void test_post_number() {
+    void test_post_number() {
         NumberEntryFormModel form = new NumberEntryFormModel();
         float number = 1.f;
         form.setNumber(number);
@@ -216,7 +216,7 @@ class NumberEntryControllerTests {
     }
 
     @Test
-    public void test_post_number_with_wrong_path() {
+    void test_post_number_with_wrong_path() {
         NumberEntryFormModel form = new NumberEntryFormModel();
         float number = 2.f;
         form.setNumber(number);
