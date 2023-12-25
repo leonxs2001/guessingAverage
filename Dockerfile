@@ -1,14 +1,8 @@
-FROM openjdk:11
+FROM ubuntu:latest
 MAINTAINER docker@thb.de
-
-# Kopiere die JAR-Datei in das Image
+RUN apt-get update
+RUN apt-get install openjdk-11-jre-headless -y
+# Maven
 ADD ./target/guessingAverage-0.0.1-SNAPSHOT.jar /service.jar
-
-# Setze den Arbeitsverzeichnis
-WORKDIR /
-
-# Port 8080 freigeben
+ENTRYPOINT java -jar /service.jar
 EXPOSE 8080
-
-# Java-Anwendung ausführen
-CMD ["java", "-jar", "/service.jar"]
