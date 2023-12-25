@@ -56,6 +56,12 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <version>3.0.4</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
