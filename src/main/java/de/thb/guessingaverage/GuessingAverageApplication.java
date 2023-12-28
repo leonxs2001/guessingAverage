@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GroupChatApplication {
+public class GuessingAverageApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GroupChatApplication.class, args);
+		SpringApplication.run(GuessingAverageApplication.class, args);
 	}
 
 }
